@@ -7,10 +7,8 @@
 
     <!-- White stroke color -->
     <stroke
-        android:width="2dp"
-        android:color="@color/darkblue" />
+        android:width="0.1dp"
+        android:color="@color/black" />
 
-    <!-- Rounded corners with radius 30dp -->
-    <corners android:radius="20dp" />
 
 </shape>
