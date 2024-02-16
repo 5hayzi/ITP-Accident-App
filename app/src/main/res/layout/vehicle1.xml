@@ -9,7 +9,7 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="411dp"
+        android:layout_width="match_parent"
         android:layout_height="60dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,24 +20,32 @@
         <ImageView
             android:id="@+id/itpLogo"
             android:layout_width="50dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginStart="35dp"
-            android:layout_gravity="center_vertical"
-            app:srcCompat="@drawable/itplogo2" />
 
+            app:srcCompat="@drawable/itplogo2" />
+<!--        android:layout_gravity="center_horizontal"-->
         <TextView
             android:layout_width="250dp"
             android:layout_height="match_parent"
-            android:gravity="center"
             android:text="Report Accident"
+            android:gravity="center"
             android:textColor="@color/white"
             android:textSize="30dp"
             android:textStyle="bold" />
 
+
+        <ImageView
+            android:id="@+id/AccidentLogo"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/accidentlogo" />
+
+
     </LinearLayout>
     <!--Page Text Box-->
     <LinearLayout
-        android:layout_width="413dp"
+        android:layout_width="match_parent"
         android:layout_height="26dp"
         android:background="@drawable/borderclass"
         app:layout_constraintBottom_toTopOf="@+id/scrollView2"
@@ -59,12 +67,12 @@
 <!--scroll view-->
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="411dp"
+        android:layout_width="match_parent"
         android:layout_height="645dp"
         android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         tools:context=".Vehicle">
 
@@ -81,17 +89,9 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <ImageView
-                    android:id="@+id/AccidentLogo"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="30dp"
-                    android:layout_marginStart="320dp"
-                    app:srcCompat="@drawable/accidentlogo" />
-
 
                 <!--Vehicle Registeration No.-->
+
 
                 <EditText
                     android:id="@+id/VehicleRegNo"
@@ -135,9 +135,9 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
+                    android:layout_marginStart="30dp"
                     android:layout_marginTop="12dp"
-                    android:layout_marginStart="30dp">
+                    android:orientation="horizontal">
 
                     <!--Vehicle Driver Gender-->
 
@@ -163,10 +163,7 @@
                     android:layout_marginTop="12dp"
                     android:layout_marginEnd="30dp"
                     android:background="@drawable/rounded_bg"
-                    android:ems="20"
-                    />
-
-
+                    android:ems="20" />
 
 
             </LinearLayout>
