@@ -103,7 +103,6 @@
                     android:background="@drawable/rounded_bg"
                     android:ems="20"
                     android:hint="Enter Vehicle Registration"
-                    android:inputType="VehicleReg"
                     android:padding="10dp"
                     android:textColor="@color/darkblue"
                     android:textColorHint="@color/grey"
@@ -124,7 +123,6 @@
                     android:background="@drawable/rounded_bg"
                     android:ems="20"
                     android:hint="Enter Driver Name"
-                    android:inputType="VehicleDriverName"
                     android:padding="10dp"
                     android:textColor="@color/darkblue"
                     android:textColorHint="@color/grey"
@@ -138,7 +136,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:layout_marginTop="12"
+                    android:layout_marginTop="12dp"
                     android:layout_marginStart="30dp">
 
                     <!--Vehicle Driver Gender-->
@@ -160,14 +158,13 @@
                 <Spinner
                     android:id="@+id/spinner"
                     android:layout_width="match_parent"
-                    android:layout_height="30"
+                    android:layout_height="30dp"
                     android:layout_marginStart="30dp"
                     android:layout_marginTop="12dp"
                     android:layout_marginEnd="30dp"
                     android:background="@drawable/rounded_bg"
                     android:ems="20"
-
-                    android:inputType="VehicleDriverName"/>
+                    />
 
 
 

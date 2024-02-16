@@ -4,109 +4,177 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_gradient"
-    tools:context=".sergeantInfo">
+    android:background="@color/darkblue">
 
 
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="184dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="170dp"
-        android:text="BASIC INFORMATION"
-        android:textColor="@color/purple_700"
-        android:textSize="22sp"
-        android:textStyle="bold"
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="411dp"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.481"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/textView16"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="33dp"
-        android:layout_marginTop="130dp"
-        android:text="DATE : "
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/date"
-        android:layout_width="169dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="125dp"
-        android:hint="select date..."
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:textStyle="bold"
+        <ImageView
+            android:id="@+id/itpLogo"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="35dp"
+            android:layout_gravity="center_vertical"
+            app:srcCompat="@drawable/itplogo2" />
+
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Report Accident"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+    <!--Page Text Box-->
+    <LinearLayout
+        android:layout_width="413dp"
+        android:layout_height="26dp"
+        android:background="@drawable/borderclass"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView16"
-        app:layout_constraintTop_toBottomOf="@+id/textView15" />
-
-    <TextView
-        android:id="@+id/textView18"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
-        android:text="TIME : "
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
-    <TextView
-        android:id="@+id/time"
-        android:layout_width="173dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="29dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="121dp"
-        android:hint="select time..."
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:textStyle="bold"
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="SERGEANT INFORMATION"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <!--scroll view-->
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="411dp"
+        android:layout_height="645dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView18"
-        app:layout_constraintTop_toBottomOf="@+id/date" />
-
-    <TextView
-        android:id="@+id/textView20"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="20dp"
-        android:text="DIVISION : "
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:textColor="@color/white"
+        app:layout_constraintHorizontal_bias="0.545"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView18" />
+        tools:context=".Vehicle">
 
-    <EditText
-        android:id="@+id/editTextTextPersonName4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:hint="Enter division..."
-        android:inputType="textPersonName"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.039"
-        app:layout_constraintStart_toEndOf="@+id/textView20"
-        app:layout_constraintTop_toBottomOf="@+id/time" />
+        <LinearLayout
+            android:id="@+id/scrollViewLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:id="@+id/page1Layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/AccidentLogo"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginStart="320dp"
+                    app:srcCompat="@drawable/accidentlogo" />
+
+
+                <!--Vehicle Registeration No.-->
+
+                <EditText
+                    android:id="@+id/VehicleRegNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="30dp"
+                    android:background="@drawable/rounded_bg"
+                    android:ems="20"
+                    android:hint="Enter Division"
+                    android:padding="10dp"
+                    android:textColor="@color/darkblue"
+                    android:textColorHint="@color/grey"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView2" />
+                
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:padding="12dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginTop="12dp"
+                    android:hint="Select Date"
+                    android:textColor="@color/darkblue"
+                    android:textColorHint="@color/grey"
+                    android:textStyle="bold"
+                    android:id="@+id/date"
+                    android:textSize="18sp"
+                    android:background="@drawable/rounded_bg"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:padding="12dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginTop="12dp"
+                    android:hint="Select Time"
+                    android:textColor="@color/darkblue"
+                    android:textColorHint="@color/grey"
+                    android:textStyle="bold"
+                    android:id="@+id/time"
+                    android:textSize="18sp"
+                    android:background="@drawable/rounded_bg"/>
+                
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginStart="30dp">
+
+                    <!--Vehicle Driver Gender-->
+
+                    <CheckBox
+                        android:id="@+id/maleCheckBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:text="Male" />
+
+                    <CheckBox
+                        android:id="@+id/femaleCheckBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:text="Female" />
+
+                </LinearLayout>
+
+
+
+
+
+
+            </LinearLayout>
+
+            <!-- Add more layouts for additional pages as needed -->
+
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
