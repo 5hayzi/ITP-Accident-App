@@ -46,7 +46,7 @@
     <!--Page Text Box-->
     <LinearLayout
         android:layout_width="413dp"
-        android:layout_height="36dp"
+        android:layout_height="26dp"
         android:background="@drawable/borderclass"
         app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -59,9 +59,8 @@
             android:gravity="center"
             android:text="SERGEANT INFORMATION"
             android:textColor="@color/black"
-            android:padding="5dp"
 
-            android:textSize="18dp"
+            android:textSize="16dp"
             android:textStyle="bold" />
 
     </LinearLayout>
