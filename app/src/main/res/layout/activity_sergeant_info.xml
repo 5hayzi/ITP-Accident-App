@@ -29,16 +29,24 @@
             android:layout_width="250dp"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="Report Accident"
+            android:text="Accident Report"
             android:textColor="@color/white"
-            android:textSize="30dp"
+            android:textSize="22sp"
+
             android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/accidentlogo"
+            android:layout_marginEnd="18dp"
+            />
 
     </LinearLayout>
     <!--Page Text Box-->
     <LinearLayout
         android:layout_width="413dp"
-        android:layout_height="26dp"
+        android:layout_height="36dp"
         android:background="@drawable/borderclass"
         app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,7 +59,9 @@
             android:gravity="center"
             android:text="SERGEANT INFORMATION"
             android:textColor="@color/black"
-            android:textSize="16dp"
+            android:padding="5dp"
+
+            android:textSize="18dp"
             android:textStyle="bold" />
 
     </LinearLayout>
@@ -81,14 +91,7 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <ImageView
-                    android:id="@+id/AccidentLogo"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="30dp"
-                    android:layout_marginStart="320dp"
-                    app:srcCompat="@drawable/accidentlogo" />
+
 
 
                 <!--Vehicle Registeration No.-->
@@ -111,14 +114,14 @@
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView2" />
-                
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:padding="12dp"
                     android:layout_marginStart="30dp"
                     android:layout_marginEnd="30dp"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginTop="15dp"
                     android:hint="Select Date"
                     android:textColor="@color/darkblue"
                     android:textColorHint="@color/grey"
@@ -133,7 +136,7 @@
                     android:padding="12dp"
                     android:layout_marginStart="30dp"
                     android:layout_marginEnd="30dp"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginTop="15dp"
                     android:hint="Select Time"
                     android:textColor="@color/darkblue"
                     android:textColorHint="@color/grey"
@@ -141,7 +144,64 @@
                     android:id="@+id/time"
                     android:textSize="18sp"
                     android:background="@drawable/rounded_bg"/>
-                
+
+                <EditText
+                    android:id="@+id/sergeantName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="30dp"
+                    android:background="@drawable/rounded_bg"
+                    android:ems="20"
+                    android:hint="Enter Sergeant Name"
+                    android:padding="10dp"
+                    android:textColor="@color/darkblue"
+                    android:textColorHint="@color/grey"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+                <EditText
+                    android:id="@+id/sergrantRank"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="30dp"
+                    android:background="@drawable/rounded_bg"
+                    android:ems="20"
+                    android:hint="Enter Sergeant Rank"
+                    android:padding="10dp"
+                    android:textColor="@color/darkblue"
+                    android:textColorHint="@color/grey"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+                <EditText
+                    android:id="@+id/sergeantId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="30dp"
+                    android:background="@drawable/rounded_bg"
+                    android:ems="20"
+                    android:hint="Enter Sergeant ID"
+                    android:padding="10dp"
+                    android:textColor="@color/darkblue"
+                    android:textColorHint="@color/grey"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -152,17 +212,7 @@
 
                     <!--Vehicle Driver Gender-->
 
-                    <CheckBox
-                        android:id="@+id/maleCheckBox"
-                        android:layout_width="wrap_content"
-                        android:layout_height="25dp"
-                        android:text="Male" />
 
-                    <CheckBox
-                        android:id="@+id/femaleCheckBox"
-                        android:layout_width="wrap_content"
-                        android:layout_height="25dp"
-                        android:text="Female" />
 
                 </LinearLayout>
 
