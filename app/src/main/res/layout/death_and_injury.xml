@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/darkblue">
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageView
+            android:id="@+id/itpLogo"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="35dp"
+
+            app:srcCompat="@drawable/itplogo2" />
+        <!--        android:layout_gravity="center_horizontal"-->
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="match_parent"
+            android:text="Report Accident"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+
+
+        <ImageView
+            android:id="@+id/AccidentLogo"
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            app:srcCompat="@drawable/FirstAidLogo" />
+
+
+    </LinearLayout>
+    <!--Page Text Box-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="26dp"
+        android:background="@drawable/borderclass"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="DEATH AND INJURY"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <!--    scroll view-->
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="645dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:context=".Vehicle">
+
+                <LinearLayout
+                    android:id="@+id/scrollViewLinearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:id="@+id/page1Layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+
+                        <!--Vehicle Registeration No.-->
+
+
+                        <EditText
+                            android:id="@+id/VehicleRegNo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="30dp"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginEnd="30dp"
+                            android:background="@drawable/rounded_bg"
+                            android:ems="20"
+                            android:hint="Enter Vehicle Registration"
+                            android:padding="10dp"
+                            android:textColor="@color/darkblue"
+                            android:textColorHint="@color/grey"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <!--                &lt;!&ndash;Vehicle Driver Name&ndash;&gt;-->
+        <!--                <EditText-->
+        <!--                    android:id="@+id/VehicleDriverName"-->
+        <!--                    android:layout_width="wrap_content"-->
+        <!--                    android:layout_height="50dp"-->
+        <!--                    android:layout_marginStart="30dp"-->
+        <!--                    android:layout_marginTop="12dp"-->
+        <!--                    android:layout_marginEnd="30dp"-->
+        <!--                    android:background="@drawable/rounded_bg"-->
+        <!--                    android:ems="20"-->
+        <!--                    android:hint="Enter Driver Name"-->
+        <!--                    android:padding="10dp"-->
+        <!--                    android:textColor="@color/darkblue"-->
+        <!--                    android:textColorHint="@color/grey"-->
+        <!--                    android:textStyle="bold"-->
+        <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+        <!--                    app:layout_constraintHorizontal_bias="0.0"-->
+        <!--                    app:layout_constraintStart_toStartOf="parent"-->
+        <!--                    app:layout_constraintTop_toBottomOf="@+id/textView2" />-->
+
+        <!--                <LinearLayout-->
+        <!--                    android:layout_width="wrap_content"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:layout_marginStart="30dp"-->
+        <!--                    android:layout_marginTop="12dp"-->
+        <!--                    android:orientation="horizontal">-->
+
+        <!--                    &lt;!&ndash;Vehicle Driver Gender&ndash;&gt;-->
+
+        <!--                    <CheckBox-->
+        <!--                        android:id="@+id/maleCheckBox"-->
+        <!--                        android:layout_width="wrap_content"-->
+        <!--                        android:layout_height="25dp"-->
+        <!--                        android:text="Male" />-->
+
+        <!--                    <CheckBox-->
+        <!--                        android:id="@+id/femaleCheckBox"-->
+        <!--                        android:layout_width="wrap_content"-->
+        <!--                        android:layout_height="25dp"-->
+        <!--                        android:text="Female" />-->
+
+        <!--                </LinearLayout>-->
+
+        <!--                <Spinner-->
+        <!--                    android:id="@+id/spinner"-->
+        <!--                    android:layout_width="match_parent"-->
+        <!--                    android:layout_height="30dp"-->
+        <!--                    android:layout_marginStart="30dp"-->
+        <!--                    android:layout_marginTop="12dp"-->
+        <!--                    android:layout_marginEnd="30dp"-->
+        <!--                    android:background="@drawable/rounded_bg"-->
+        <!--                    android:ems="20" />-->
+
+
+                    </LinearLayout>
+
+         Add more layouts for additional pages as needed
+
+                </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
