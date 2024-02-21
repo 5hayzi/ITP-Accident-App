@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:orientation="horizontal"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -19,25 +20,27 @@
 
         <ImageView
             android:id="@+id/itpLogo"
-            android:layout_width="50dp"
+            android:layout_width="60dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="35dp"
+
 
             app:srcCompat="@drawable/itplogo2" />
-<!--        android:layout_gravity="center_horizontal"-->
+        <!--        android:layout_gravity="center_horizontal"-->
+
+
         <TextView
-            android:layout_width="250dp"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             android:text="Report Accident"
-            android:gravity="center"
             android:textColor="@color/white"
             android:textSize="30dp"
             android:textStyle="bold" />
 
-
         <ImageView
             android:id="@+id/AccidentLogo"
-            android:layout_width="50dp"
+            android:layout_width="55dp"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/accidentlogo" />
 
@@ -45,36 +48,38 @@
     </LinearLayout>
     <!--Page Text Box-->
     <LinearLayout
+        android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="26dp"
+        android:gravity="center"
         android:background="@drawable/borderclass"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="VEHICLE INFORMATION"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vehicle Info"
             android:textColor="@color/black"
             android:textSize="16dp"
             android:textStyle="bold" />
 
     </LinearLayout>
 
-<!--scroll view-->
+    <!--    scroll view-->
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="match_parent"
-        android:layout_height="645dp"
+        android:layout_height="0dp"
         android:background="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintVertical_bias="0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:context=".Vehicle">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+        tools:context=".Vehicle"
+        tools:ignore="MissingConstraints">
 
         <LinearLayout
             android:id="@+id/scrollViewLinearLayout"
@@ -172,4 +177,31 @@
 
         </LinearLayout>
     </ScrollView>
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="410dp"
+        android:layout_height="57dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/CustLogo"
+            android:layout_width="55dp"
+            android:layout_marginStart="15dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            app:srcCompat="@drawable/CUSTLogo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:gravity="center"
+            android:text="Developed By \n Capital University of Science And Technology \n Department of Software Engineering"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
