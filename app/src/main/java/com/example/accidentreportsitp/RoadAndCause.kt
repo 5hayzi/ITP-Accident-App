@@ -1,5 +1,6 @@
 package com.example.accidentreportsitp
 
+
 import android.Manifest
 import android.content.pm.PackageManager
 import android.location.Geocoder
@@ -72,8 +73,8 @@ abstract class RoadAndCause : AppCompatActivity(), OnMapReadyCallback {
         }
     }
 
-    override fun onMapReady(googleMap: GoogleMap?) {
-        if (googleMap != null) {
+    override fun onMapReady(p0: GoogleMap) {
+        if (p0 != null) {
             // Request location permission if not granted
             if (ContextCompat.checkSelfPermission(
                             this,
@@ -87,7 +88,7 @@ abstract class RoadAndCause : AppCompatActivity(), OnMapReadyCallback {
                 )
             } else {
                 // Permission already granted, get the current location
-                getCurrentLocation(googleMap)
+                getCurrentLocation(p0)
             }
         }
     }
