@@ -13,4 +13,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "Accident Reports ITP"
-include ':app'
+include (":app")
