@@ -75,186 +75,212 @@
         android:background="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintVertical_bias="0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+        app:layout_constraintVertical_bias="0.0"
         tools:context=".Vehicle"
         tools:ignore="MissingConstraints">
 
-                <LinearLayout
-                    android:id="@+id/scrollViewLinearLayout"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
+        <LinearLayout
+            android:id="@+id/scrollViewLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
 
+            <!--Road and cause Info-->
 
-                        <!--Road and cause Info-->
+            <EditText
+                android:id="@+id/RoadAndCause"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/rounded_bg"
+                android:ems="20"
+                android:hint="Enter Description"
+                android:inputType="textLongMessage"
+                android:padding="10dp"
+                android:textColor="@color/darkblue"
+                android:textColorHint="@color/grey"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
-                    <EditText
-                            android:id="@+id/RoadAndCause"
-                            android:layout_width="wrap_content"
-                            android:layout_height="50dp"
-                            android:layout_marginStart="30dp"
-                            android:layout_marginTop="12dp"
-                            android:layout_marginEnd="30dp"
-                            android:background="@drawable/rounded_bg"
-                            android:ems="20"
-                            android:hint="Enter Description"
-                            android:inputType="textLongMessage"
-                            android:padding="10dp"
-                            android:textColor="@color/darkblue"
-                            android:textColorHint="@color/grey"
-                            android:textSize="18sp"
-                            android:textStyle="bold"
-                            />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                <!--Number of Vehicles on fault-->
+                <EditText
+                    android:id="@+id/faultNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/rounded_bg"
+                    android:ems="8"
+                    android:hint="No. of fault Vehicles"
+                    android:inputType="number"
+                    android:padding="10dp"
+                    android:textColor="@color/darkblue"
+                    android:textColorHint="@color/grey"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-                        <!--Number of Vehicles on fault-->
-                        <EditText
-                            android:id="@+id/faultNumber"
-                            android:layout_width="wrap_content"
-                            android:layout_height="50dp"
-                            android:layout_marginStart="30dp"
-                            android:layout_marginTop="12dp"
-                            android:layout_marginEnd="8dp"
-                            android:background="@drawable/rounded_bg"
-                            android:ems="8"
-                            android:hint="No. of fault Vehicles"
-                            android:inputType="number"
-                            android:padding="10dp"
-                            android:textColor="@color/darkblue"
-                            android:textColorHint="@color/grey"
-                            android:textStyle="bold"
-                            android:textSize="18sp"
-                            />
+                <!--Number of Damaged Vehicles -->
+                <EditText
+                    android:id="@+id/damageVehicle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="30dp"
+                    android:background="@drawable/rounded_bg"
+                    android:ems="8"
+                    android:hint="No. of Damage Vehicles"
+                    android:inputType="number"
+                    android:padding="10dp"
+                    android:textColor="@color/darkblue"
+                    android:textColorHint="@color/grey"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-                        <!--Number of Damaged Vehicles -->
-                        <EditText
-                            android:id="@+id/damageVehicle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="50dp"
-                            android:layout_marginStart="8dp"
-                            android:layout_marginTop="12dp"
-                            android:layout_marginEnd="30dp"
-                            android:background="@drawable/rounded_bg"
-                            android:ems="8"
-                            android:hint="No. of Damage Vehicles"
-                            android:inputType="number"
-                            android:padding="10dp"
-                            android:textColor="@color/darkblue"
-                            android:textColorHint="@color/grey"
-                            android:textStyle="bold"
-                            android:textSize="18sp"
-                            />
+            </LinearLayout>
+            <!--Safety Box Start-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="10dp"
+                android:text="Safety Gadgets"
+                android:textColor="@color/black"
+                android:textSize="17sp"
+                android:textStyle="bold" />
 
-                    </LinearLayout>
-<!--Safety Box Start-->
-                        <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_gravity="center_horizontal"
-                        android:text="Safety Gadgets"
-                        android:textColor="@color/black"
-                        android:textSize="17sp"
-                        android:textStyle="bold" />
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="30dp"
-                            android:layout_marginTop="12dp"
-                            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="10dp"
-                                android:layout_marginEnd="10dp"
-                                android:text="Helmet:   "
-                                android:textColor="@color/black"
-                                android:textSize="17sp"
-                                android:textStyle="bold" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="Helmet:   "
+                    android:textColor="@color/black"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
 
-                            <!--Vehicle Driver Gender-->
+                <!--Vehicle Driver Gender-->
 
-                            <CheckBox
-                                android:id="@+id/helmetYes"
-                                android:layout_width="wrap_content"
-                                android:layout_height="25dp"
-                                android:text="Yes"
-                                android:textSize="20sp"
-                                />
+                <CheckBox
+                    android:id="@+id/helmetYes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:text="Yes"
+                    android:textSize="20sp" />
 
-                            <CheckBox
-                                android:id="@+id/helmetNo"
-                                android:layout_width="wrap_content"
-                                android:layout_height="25dp"
-                                android:text="No"
-                                android:textSize="20sp"/>
+                <CheckBox
+                    android:id="@+id/helmetNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:text="No"
+                    android:textSize="20sp" />
 
-                        </LinearLayout>
-                        <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="30dp"
-                        android:layout_marginTop="12dp"
-                        android:orientation="horizontal">
+            </LinearLayout>
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginEnd="10dp"
-                            android:text="SeatBelt: "
-                            android:textColor="@color/black"
-                            android:textSize="17sp"
-                            android:textStyle="bold" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
 
-                        <!--Vehicle Driver Gender-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="SeatBelt: "
+                    android:textColor="@color/black"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
 
-                            <CheckBox
-                                android:id="@+id/seatbeltYes"
-                                android:layout_width="wrap_content"
-                                android:layout_height="40dp"
-                                android:text="Yes"
-                                android:textSize="20sp"/>
+                <!--Vehicle Driver Gender-->
 
-                        <CheckBox
-                            android:id="@+id/seatbeltNo"
-                            android:layout_width="wrap_content"
-                            android:layout_height="25dp"
-                            android:text="No"
-                            android:textSize="20sp"/>
+                <CheckBox
+                    android:id="@+id/seatbeltYes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text="Yes"
+                    android:textSize="20sp" />
 
-                    </LinearLayout>
-<!--Safety Box Start-->
-               <!--Map View-->
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_gravity="center_horizontal"
-                        android:text="Map View"
-                        android:textColor="@color/black"
-                        android:textSize="17sp"
-                        android:textStyle="bold" />
+                <CheckBox
+                    android:id="@+id/seatbeltNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:text="No"
+                    android:textSize="20sp" />
 
-                    <com.google.android.gms.maps.MapView
-                        android:id="@+id/mapView2"
-                        android:layout_width="match_parent"
-                        android:layout_height="310dp"
-                        android:layout_marginTop="12dp" />
-                </LinearLayout>
+            </LinearLayout>
+
+            <!--Accident Cause box-->
+            <Spinner
+                android:id="@+id/accidentCauseBox"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="30dp"
+                android:padding="10dp"
+                android:textColor="@color/darkblue"
+                android:textSize="18sp"
+                android:background="@drawable/rounded_bg"
+                android:ems="20" />
+
+            <!--Place of accident -->
+            <EditText
+                android:id="@+id/accidentPlace"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/rounded_bg"
+                android:ems="20"
+                android:hint="Enter Place of Accident"
+                android:inputType="textLongMessage"
+                android:padding="10dp"
+                android:textColor="@color/darkblue"
+                android:textColorHint="@color/grey"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <!--Road Name box-->
+            <Spinner
+                android:id="@+id/roadNameBox"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="30dp"
+                android:padding="10dp"
+                android:textColor="@color/darkblue"
+                android:textSize="18sp"
+                android:background="@drawable/rounded_bg"
+                android:ems="20" />
+        </LinearLayout>
     </ScrollView>
+
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="410dp"
