@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/darkblue">
+    android:background="@color/darkblue"
+    tools:context=".Death_screen">
 
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="60sp"
         android:orientation="horizontal"
         android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,10 +21,8 @@
 
         <ImageView
             android:id="@+id/itpLogo"
-            android:layout_width="60dp"
+            android:layout_width="60sp"
             android:layout_height="wrap_content"
-
-
             app:srcCompat="@drawable/itplogo2" />
         <!--        android:layout_gravity="center_horizontal"-->
 
@@ -31,16 +30,16 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10sp"
+            android:layout_marginEnd="10sp"
             android:text="Report Accident"
             android:textColor="@color/white"
-            android:textSize="30dp"
+            android:textSize="30sp"
             android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/AccidentLogo"
-            android:layout_width="55dp"
+            android:layout_width="55sp"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/firstaidlogo" />
 
@@ -50,7 +49,7 @@
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
-        android:layout_height="26dp"
+        android:layout_height="26sp"
         android:gravity="center"
         android:background="@drawable/borderclass"
         app:layout_constraintEnd_toEndOf="parent"
@@ -62,7 +61,7 @@
             android:layout_height="wrap_content"
             android:text="DEATH AND INJURY"
             android:textColor="@color/black"
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
     </LinearLayout>
@@ -71,7 +70,7 @@
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="0sp"
         android:background="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -88,40 +87,55 @@
             android:orientation="vertical">
 
 
+            <!--Description-->
 
-                <!--Vehicle Registeration No.-->
+            <!--No. of deaths-->
+            <EditText
+                android:id="@+id/Description"
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:layout_marginStart="30sp"
+                android:layout_marginTop="12sp"
+                android:layout_marginEnd="30sp"
+                android:background="@drawable/rounded_bg"
+                android:ems="20"
+                android:hint="Description"
+                android:inputType="textLongMessage"
+                android:padding="10sp"
+                android:textColor="@color/darkblue"
+                android:textColorHint="@color/grey"
+                android:textStyle="bold" />
 
-
-                <EditText
+            <EditText
                     android:id="@+id/DeathNumber"
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginEnd="30dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="50sp"
+                    android:layout_marginStart="30sp"
+                    android:layout_marginTop="12sp"
+                    android:layout_marginEnd="30sp"
                     android:background="@drawable/rounded_bg"
                     android:ems="20"
                     android:hint="Enter No. of Deaths"
                     android:inputType="number"
-                    android:padding="10dp"
+                    android:padding="10sp"
                     android:textColor="@color/darkblue"
                     android:textColorHint="@color/grey"
                     android:textStyle="bold"
                      />
 
-                <!--Vehicle Driver Name-->
+                <!--No. of injuries-->
                 <EditText
                     android:id="@+id/InjuryNumber"
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginEnd="30dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="50sp"
+                    android:layout_marginStart="30sp"
+                    android:layout_marginTop="12sp"
+                    android:layout_marginEnd="30sp"
                     android:background="@drawable/rounded_bg"
                     android:ems="20"
                     android:hint="Enter No. of Injuries"
                     android:inputType="number"
-                    android:padding="10dp"
+                    android:padding="10sp"
                     android:textColor="@color/darkblue"
                     android:textColorHint="@color/grey"
                     android:textStyle="bold"
@@ -130,71 +144,175 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginStart="30sp"
+                    android:layout_marginTop="12sp"
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="130sp"
                         android:layout_height="match_parent"
                         android:background="@color/white"
                         android:gravity="center"
                         android:text="Compromise: "
                         android:textColor="@color/black"
-                        android:textSize="20dp"
+                        android:textSize="20sp"
                         android:textStyle="bold" />
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
 
+                        android:orientation="vertical">
 
                     <!--Vehicle Driver Gender-->
                     <CheckBox
                         android:id="@+id/maleCheckBox"
                         android:layout_width="wrap_content"
-                        android:layout_height="40dp"
+                        android:layout_height="40sp"
                         android:text="Yes"
-                        android:textSize="25dp" />
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
 
                     <CheckBox
                         android:id="@+id/femaleCheckBox"
                         android:layout_width="wrap_content"
-                        android:layout_height="40dp"
+                        android:layout_height="40sp"
                         android:text="No"
-                        android:textSize="25dp" />
-
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+                    </LinearLayout>
                 </LinearLayout>
 
-                <!--                <Spinner-->
-                <!--                    android:id="@+id/spinner"-->
-                <!--                    android:layout_width="match_parent"-->
-                <!--                    android:layout_height="30dp"-->
-                <!--                    android:layout_marginStart="30dp"-->
-                <!--                    android:layout_marginTop="12dp"-->
-                <!--                    android:layout_marginEnd="30dp"-->
-                <!--                    android:background="@drawable/rounded_bg"-->
-                <!--                    android:ems="20" />-->
-
+            <Spinner
+                android:id="@+id/hospitalbox"
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:layout_marginStart="30sp"
+                android:layout_marginTop="12sp"
+                android:layout_marginEnd="30sp"
+                android:background="@drawable/rounded_bg"
+                android:ems="20"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="bottom"
+                android:layout_marginStart="30sp"
+                android:layout_marginTop="12sp"
                 android:orientation="horizontal">
 
-
-                <Button
-                    android:layout_width="80dp"
-                    android:layout_height="50dp"
-                    android:background="@color/black"
-                    android:backgroundTint="@color/white"
-                    android:text="back"
+                <TextView
+                    android:layout_width="130sp"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:text="F.I.R: "
                     android:textColor="@color/black"
-                    android:textSize="20dp"/>
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
-                <Button
-                    android:layout_width="80dp"
-                    android:layout_height="50dp"
-                    android:background="@drawable/green_button"
-                    android:foreground="@drawable/green_button" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
+                <!--Vehicle Driver Gender-->
+                <CheckBox
+                    android:id="@+id/RegisteredBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40sp"
+                    android:text="Registered"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/notRegisteredBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40sp"
+                    android:text="Not Registered"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/handedBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40sp"
+                    android:text="Handed Over"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+            </LinearLayout>
+
+            <Spinner
+                android:id="@+id/PoliceBox"
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:layout_marginStart="30sp"
+                android:layout_marginTop="12sp"
+                android:layout_marginEnd="30sp"
+                android:background="@drawable/rounded_bg"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:ems="20" />
+
+            <!--Duty officer-->
+
+            <EditText
+                android:id="@+id/DutyOfficer"
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:layout_marginStart="30sp"
+                android:layout_marginTop="12sp"
+                android:layout_marginEnd="30sp"
+                android:background="@drawable/rounded_bg"
+                android:ems="20"
+                android:hint="Duty Officer"
+                android:padding="10sp"
+                android:textColor="@color/darkblue"
+                android:textColorHint="@color/grey"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="15sp"
+                android:layout_marginStart="30sp"
+                android:layout_marginEnd="30sp"
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+                android:layout_gravity="center_horizontal"
+                >
+
+                <TextView
+                    android:id="@+id/btnprev"
+                    android:layout_width="100sp"
+                    android:layout_height="50sp"
+                    android:text="Previous"
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    android:textColor="#C30808"
+                    android:gravity="center"
+                    android:background="@drawable/back_button_bg"
+                    >
+
+                </TextView>
+
+
+                <TextView
+                    android:id="@+id/btnnxt"
+                    android:layout_width="100sp"
+                    android:layout_height="50sp"
+                    android:text="Next"
+                    android:textColor="#0E8F0A"
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:layout_marginStart="30sp"
+                    android:background="@drawable/next_button_bg"
+                    >
+
+                </TextView>
             </LinearLayout>
 
 
@@ -203,8 +321,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="410dp"
-        android:layout_height="57dp"
+        android:layout_width="410sp"
+        android:layout_height="57sp"
         android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -213,16 +331,16 @@
 
         <ImageView
             android:id="@+id/CustLogo"
-            android:layout_width="55dp"
+            android:layout_width="55sp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="13dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="20sp"
             app:srcCompat="@drawable/custlogo" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="8sp"
             android:gravity="center"
             android:text="Developed By \n Capital University of Science And Technology \n Department of Software Engineering"
             android:textSize="15sp"

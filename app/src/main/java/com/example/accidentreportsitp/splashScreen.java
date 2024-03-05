@@ -19,7 +19,7 @@ public class splashScreen extends AppCompatActivity {
             @Override
             public void run() {
                 // Start the next activity
-                Intent intent = new Intent(splashScreen.this, RoadAndCause::class.java);
+                Intent intent = new Intent(splashScreen.this, Death_screen.class);
                 startActivity(intent);
                 finish(); // Finish the splash activity
             }

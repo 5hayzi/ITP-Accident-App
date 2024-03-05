@@ -36,9 +36,12 @@
 <!--            android:name=".Vehicle"-->
 <!--            android:exported="false"/>-->
 
+<!--        <activity-->
+<!--            android:name=".sergeantInfo"-->
+<!--            android:exported="false"/>-->
         <activity
-            android:name=".RoadAndCause"
-            android:exported="true"/>
+            android:name=".Death_screen"
+            android:exported="false"/>
 
     </application>
 
