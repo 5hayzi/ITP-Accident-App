@@ -84,7 +84,7 @@
         <LinearLayout
             android:id="@+id/scrollViewLinearLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
 
@@ -92,7 +92,7 @@
                 <!--Vehicle Registeration No.-->
 
                 <EditText
-                    android:id="@+id/VehicleRegNo"
+                    android:id="@+id/division"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
                     android:layout_marginStart="30dp"
@@ -183,11 +183,53 @@
                     android:textColorHint="@color/grey"
                     android:textStyle="bold"
                     />
+           
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                >
+
+              <TextView
+                  android:id="@+id/btnprev"
+                  android:layout_width="135dp"
+                  android:layout_height="50dp"
+                  android:text="Previous"
+                  android:textSize="18sp"
+                  android:textAlignment="center"
+                  android:textColor="#C30808"
+                  android:gravity="center"
+                  android:background="@drawable/back_button_bg"
+                  >
+
+              </TextView>
+
+
+                <TextView
+                    android:id="@+id/btnnxt"
+                    android:layout_width="135dp"
+                    android:layout_height="50dp"
+                    android:text="Next"
+                    android:textColor="#0E8F0A"
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:layout_marginStart="30dp"
+                    android:background="@drawable/next_button_bg"
+                    >
+
+                </TextView>
+            </LinearLayout>
 
 
 
         </LinearLayout>
     </ScrollView>
+
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="410dp"
@@ -204,14 +246,14 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginStart="13dp"
-            app:srcCompat="@drawable/custlogo" />
+            app:srcCompat="@drawable/grcclogo" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="6dp"
             android:gravity="center"
-            android:text="Developed By \n Capital University of Science And Technology \n Department of Software Engineering"
+            android:text="Developed By GRC CENTRAL"
             android:textSize="15sp"
             android:textColor="@color/black"
             android:textStyle="bold" />

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.DatePicker;
@@ -14,7 +15,7 @@ import android.widget.TimePicker;
 
 public class sergeantInfo extends AppCompatActivity {
 
-    TextView showdate,showtime;
+    TextView showdate,showtime,back,next;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +24,8 @@ public class sergeantInfo extends AppCompatActivity {
 
         showdate = findViewById(R.id.date);
         showtime = findViewById(R.id.time);
+        back = findViewById(R.id.btnprev);
+        next = findViewById(R.id.btnnxt);
 
         showdate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,6 +39,16 @@ public class sergeantInfo extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 openTimeDialog();
+            }
+        });
+
+        next = findViewById(R.id.btnnxt);
+
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(sergeantInfo.this,vehicleInfo.class);
+                startActivity(intent);
             }
         });
 

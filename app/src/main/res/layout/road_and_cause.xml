@@ -252,7 +252,8 @@
                         android:id="@+id/mapView2"
                         android:layout_width="match_parent"
                         android:layout_height="310dp"
-                        android:layout_marginTop="12dp" />
+                        android:layout_marginTop="12dp"
+                        tools:ignore="MissingClass" />
                 </LinearLayout>
     </ScrollView>
     <LinearLayout
