@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Accident Reports ITP</string>
+    <string name="Top_name">رپورٹ حادثہ</string>
+    <string name="language">English</string>
+    <string name="sergeant_info">سارجنٹ کی معلومات</string>
+    <string name="enter_division">شعبہ درج کریں</string>
+    <string name="select_date">تاریخ منتخب کریں</string>
+    <string name="select_time">وقت منتخب کریں</string>
+    <string name="enter_sergeant_name">سارجنٹ کا نام درج کریں</string>
+    <string name="enter_sergeant_rank">سارجنٹ کا درجہ درج کریں</string>
+    <string name="enter_sergeant_id">سارجنٹ کی شناختی کارڈ نمبر درج کریں</string>
+    <string name="vehicle_info">گاڑی کی معلومات</string>
+    <string name="add_car">گاڑی شامل کریں</string>
+    <string name="car_reg_number_hint">گاڑی کا رجسٹریشن نمبر</string>
+    <string name="driver_name_hint">ڈرائیور کا نام</string>
+    <string name="driver_age_hint">ڈرائیور کی عمر</string>
+    <string name="driver_gender_label">ڈرائیور کا جنس</string>
+    <string name="male_label">مرد</string>
+    <string name="female_label">عورت</string>
+    <string name="driver_license_label">ڈرائیور کا لائسنس</string>
+    <string name="seat_belt_label">سیٹ بیلٹ</string>
+    <string name="helmet_label">ہیلمٹ</string>
+    <string name="death_injury_label">موت اور زخم</string>
+    <string name="enter_death_hint">موتوں کی تعداد درج کریں</string>
+    <string name="enter_injury_hint">زخموں کی تعداد درج کریں</string>
+    <string name="compromise_label">مفاہمت:</string>
+    <string name="yes_label">ہاں</string>
+    <string name="no_label">نہیں</string>
+    <string name="fir_label">ایف آئی آر:</string>
+    <string name="registered_label">رجسٹرڈ</string>
+    <string name="not_registered_label">" نہیں رجسٹرڈ"</string>
+    <string name="handed_over_label">ہینڈیڈ اوور</string>
+    <string name="duty_officer_hint">ڈیوٹی آفیسر</string>
+    <string name="road_cause_label">راستہ اور وجہ</string>
+    <string name="description_hint">تفصیل درج کریں</string>
+    <string name="fault_vehicle_hint">غلط گاڑیوں کی تعداد</string>
+    <string name="damage_vehicle_hint">نقصان والی گاڑیوں کی تعداد</string>
+    <string name="place_accident_hint">حادثہ کا مقام درج کریں</string>
+    <string name="previous">پچھلا</string>
+    <string name="next">اگلا</string>
+    <string name="itp_logo">" آئی ٹی پی لوگو"</string>
+    <string name="sergent_logo">افسر لوگو</string>
+    <string name="vehicle_logo">گاڑی لوگو</string>
+    <string name="road_cause_logo">مقام لوگو</string>
+    <string name="death_injury_logo">طبی لوگو</string>
+</resources>

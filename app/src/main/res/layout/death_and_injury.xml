@@ -11,7 +11,7 @@
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="60sp"
+        android:layout_height="60dp"
         android:orientation="horizontal"
         android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,27 +21,28 @@
 
         <ImageView
             android:id="@+id/itpLogo"
-            android:layout_width="60sp"
+            android:layout_width="60dp"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/itplogo2" />
-        <!--        android:layout_gravity="center_horizontal"-->
-
+            app:srcCompat="@drawable/itplogo2"
+            android:contentDescription="@string/itp_logo"
+            />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10sp"
-            android:layout_marginEnd="10sp"
-            android:text="Report Accident"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:text="@string/Top_name"
             android:textColor="@color/white"
-            android:textSize="30sp"
+            android:textSize="30dp"
             android:textStyle="bold" />
 
         <ImageView
-            android:id="@+id/AccidentLogo"
-            android:layout_width="55sp"
+            android:id="@+id/locationLogo"
+            android:layout_width="55dp"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/firstaidlogo" />
+            app:srcCompat="@drawable/firstaidlogo"
+            android:contentDescription="@string/death_injury_logo"/>
 
 
     </LinearLayout>
@@ -49,7 +50,7 @@
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
-        android:layout_height="26sp"
+        android:layout_height="26dp"
         android:gravity="center"
         android:background="@drawable/borderclass"
         app:layout_constraintEnd_toEndOf="parent"
@@ -59,9 +60,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="DEATH AND INJURY"
+            android:text="@string/death_injury_label"
             android:textColor="@color/black"
-            android:textSize="16sp"
+            android:textSize="16dp"
             android:textStyle="bold" />
 
     </LinearLayout>
@@ -70,11 +71,10 @@
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="match_parent"
-        android:layout_height="0sp"
+        android:layout_height="0dp"
         android:background="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintVertical_bias="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
         tools:context=".Vehicle"
@@ -83,7 +83,7 @@
         <LinearLayout
             android:id="@+id/scrollViewLinearLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
 
@@ -94,167 +94,164 @@
                 android:id="@+id/Description"
                 android:layout_width="match_parent"
                 android:layout_height="50sp"
-                android:layout_marginStart="30sp"
+                android:layout_marginStart="30dp"
                 android:layout_marginTop="12sp"
-                android:layout_marginEnd="30sp"
+                android:layout_marginEnd="30dp"
                 android:background="@drawable/rounded_bg"
                 android:ems="20"
-                android:hint="Description"
+                android:hint="@string/description_hint"
                 android:inputType="textLongMessage"
-                android:padding="10sp"
+                android:padding="10dp"
                 android:textColor="@color/darkblue"
+                android:textSize="18sp"
                 android:textColorHint="@color/grey"
                 android:textStyle="bold" />
 
             <EditText
-                    android:id="@+id/DeathNumber"
-                    android:layout_width="match_parent"
-                    android:layout_height="50sp"
-                    android:layout_marginStart="30sp"
-                    android:layout_marginTop="12sp"
-                    android:layout_marginEnd="30sp"
-                    android:background="@drawable/rounded_bg"
-                    android:ems="20"
-                    android:hint="Enter No. of Deaths"
-                    android:inputType="number"
-                    android:padding="10sp"
-                    android:textColor="@color/darkblue"
-                    android:textColorHint="@color/grey"
-                    android:textStyle="bold"
-                     />
+                android:id="@+id/DeathNumber"
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="12sp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/rounded_bg"
+                android:ems="20"
+                android:hint="@string/enter_death_hint"
+                android:inputType="number"
+                android:padding="10dp"
+                android:textColor="@color/darkblue"
+                android:textColorHint="@color/grey"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
-                <!--No. of injuries-->
-                <EditText
-                    android:id="@+id/InjuryNumber"
-                    android:layout_width="match_parent"
-                    android:layout_height="50sp"
-                    android:layout_marginStart="30sp"
-                    android:layout_marginTop="12sp"
-                    android:layout_marginEnd="30sp"
-                    android:background="@drawable/rounded_bg"
-                    android:ems="20"
-                    android:hint="Enter No. of Injuries"
-                    android:inputType="number"
-                    android:padding="10sp"
-                    android:textColor="@color/darkblue"
-                    android:textColorHint="@color/grey"
-                    android:textStyle="bold"
-                    />
+            <!--No. of injuries-->
+            <EditText
+                android:id="@+id/InjuryNumber"
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="12sp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/rounded_bg"
+                android:ems="20"
+                android:hint="@string/enter_injury_hint"
+                android:inputType="number"
+                android:padding="10dp"
+                android:textColor="@color/darkblue"
+                android:textColorHint="@color/grey"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
-                <LinearLayout
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12sp"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:text="@string/compromise_label"
+                    android:textColor="@color/darkblue"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <!--Vehicle Driver Gender-->
+                <RadioButton
+                    android:id="@+id/maleCheckBox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="30sp"
-                    android:layout_marginTop="12sp"
-                    android:orientation="horizontal">
+                    android:text="@string/yes_label"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
 
-                    <TextView
-                        android:layout_width="130sp"
-                        android:layout_height="match_parent"
-                        android:background="@color/white"
-                        android:gravity="center"
-                        android:text="Compromise: "
-                        android:textColor="@color/black"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-
-                        android:orientation="vertical">
-
-                    <!--Vehicle Driver Gender-->
-                    <CheckBox
-                        android:id="@+id/maleCheckBox"
-                        android:layout_width="wrap_content"
-                        android:layout_height="40sp"
-                        android:text="Yes"
-                        android:textColor="@color/black"
-                        android:textSize="20sp" />
-
-                    <CheckBox
-                        android:id="@+id/femaleCheckBox"
-                        android:layout_width="wrap_content"
-                        android:layout_height="40sp"
-                        android:text="No"
-                        android:textColor="@color/black"
-                        android:textSize="20sp" />
-                    </LinearLayout>
-                </LinearLayout>
+                <RadioButton
+                    android:id="@+id/femaleCheckBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/no_label"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+            </RadioGroup>
 
             <Spinner
                 android:id="@+id/hospitalbox"
                 android:layout_width="match_parent"
                 android:layout_height="50sp"
-                android:layout_marginStart="30sp"
+                android:layout_marginStart="30dp"
                 android:layout_marginTop="12sp"
-                android:layout_marginEnd="30sp"
+                android:layout_marginEnd="30dp"
                 android:background="@drawable/rounded_bg"
                 android:ems="20"
                 android:textColor="@color/black"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="30sp"
                 android:layout_marginTop="12sp"
+                android:layout_gravity="center_horizontal"
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="130sp"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="@color/white"
                     android:gravity="center"
-                    android:text="F.I.R: "
-                    android:textColor="@color/black"
+                    android:text="@string/fir_label"
+                    android:textColor="@color/darkblue"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
-                <LinearLayout
+                <RadioGroup
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                <!--Vehicle Driver Gender-->
-                <CheckBox
-                    android:id="@+id/RegisteredBox"
-                    android:layout_width="wrap_content"
-                    android:layout_height="40sp"
-                    android:text="Registered"
-                    android:textColor="@color/black"
-                    android:textSize="20sp" />
+                    <!--Vehicle Driver Gender-->
+                    <RadioButton
+                        android:id="@+id/RegisteredBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/registered_label"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
 
-                <CheckBox
-                    android:id="@+id/notRegisteredBox"
-                    android:layout_width="wrap_content"
-                    android:layout_height="40sp"
-                    android:text="Not Registered"
-                    android:textColor="@color/black"
-                    android:textSize="20sp" />
+                    <RadioButton
+                        android:id="@+id/notRegisteredBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/not_registered_label"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
 
-                <CheckBox
-                    android:id="@+id/handedBox"
-                    android:layout_width="wrap_content"
-                    android:layout_height="40sp"
-                    android:text="Handed Over"
-                    android:textColor="@color/black"
-                    android:textSize="20sp" />
+                    <RadioButton
+                        android:id="@+id/handedBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/handed_over_label"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
 
-            </LinearLayout>
+                </RadioGroup>
             </LinearLayout>
 
             <Spinner
                 android:id="@+id/PoliceBox"
                 android:layout_width="match_parent"
                 android:layout_height="50sp"
-                android:layout_marginStart="30sp"
+                android:layout_marginStart="30dp"
                 android:layout_marginTop="12sp"
-                android:layout_marginEnd="30sp"
+                android:layout_marginEnd="30dp"
                 android:background="@drawable/rounded_bg"
+                android:ems="20"
                 android:textColor="@color/black"
-                android:textStyle="bold"
-                android:ems="20" />
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <!--Duty officer-->
 
@@ -262,55 +259,51 @@
                 android:id="@+id/DutyOfficer"
                 android:layout_width="match_parent"
                 android:layout_height="50sp"
-                android:layout_marginStart="30sp"
+                android:layout_marginStart="30dp"
                 android:layout_marginTop="12sp"
-                android:layout_marginEnd="30sp"
+                android:layout_marginEnd="30dp"
                 android:background="@drawable/rounded_bg"
                 android:ems="20"
-                android:hint="Duty Officer"
-                android:padding="10sp"
+                android:hint="@string/duty_officer_hint"
+                android:padding="10dp"
                 android:textColor="@color/darkblue"
                 android:textColorHint="@color/grey"
+                android:inputType="text"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="15sp"
-                android:layout_marginStart="30sp"
-                android:layout_marginEnd="30sp"
-                app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15dp"
                 android:layout_gravity="center_horizontal"
-                >
+                android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/btnprev"
-                    android:layout_width="100sp"
-                    android:layout_height="50sp"
-                    android:text="Previous"
-                    android:textSize="18sp"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/back_button_bg"
+                    android:gravity="center"
+                    android:text="@string/previous"
                     android:textAlignment="center"
                     android:textColor="#C30808"
-                    android:gravity="center"
-                    android:background="@drawable/back_button_bg"
-                    >
+                    android:textSize="18sp">
 
                 </TextView>
 
 
                 <TextView
                     android:id="@+id/btnnxt"
-                    android:layout_width="100sp"
-                    android:layout_height="50sp"
-                    android:text="Next"
-                    android:textColor="#0E8F0A"
-                    android:textSize="18sp"
-                    android:textAlignment="center"
-                    android:gravity="center"
-                    android:layout_marginStart="30sp"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="30dp"
                     android:background="@drawable/next_button_bg"
-                    >
+                    android:gravity="center"
+                    android:text="@string/next"
+                    android:textAlignment="center"
+                    android:textColor="#0E8F0A"
+                    android:textSize="18sp">
 
                 </TextView>
             </LinearLayout>
@@ -319,32 +312,5 @@
         </LinearLayout>
     </ScrollView>
 
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="410sp"
-        android:layout_height="57sp"
-        android:background="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent">
 
-        <ImageView
-            android:id="@+id/CustLogo"
-            android:layout_width="55sp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginStart="20sp"
-            app:srcCompat="@drawable/custlogo" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginStart="8sp"
-            android:gravity="center"
-            android:text="Developed By \n Capital University of Science And Technology \n Department of Software Engineering"
-            android:textSize="15sp"
-            android:textColor="@color/black"
-            android:textStyle="bold" />
-    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

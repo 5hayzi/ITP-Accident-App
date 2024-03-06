@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">Accident Reports ITP</string>
+    <string name="Top_name">Report Accident</string>
+    <string name="language">اردو</string>
+<!--Sergent Info-->
+    <string name="sergeant_info">Sergeant Info</string>
+    <string name="enter_division">Enter Division</string>
+    <string name="select_date">Select Date</string>
+    <string name="select_time">Select Time</string>
+    <string name="enter_sergeant_name">Enter Sergeant Name</string>
+    <string name="enter_sergeant_rank">Enter Sergeant Rank</string>
+    <string name="enter_sergeant_id">Enter Sergeant ID</string>
+<!--Vehicle Strings-->
+    <string name="vehicle_info">Vehicle Info</string>
+    <string name="add_car">Add Car</string>
+<!--Car entry-->
+    <string name="car_reg_number_hint">Car Reg Number</string>
+    <string name="driver_name_hint">Driver\'s Name</string>
+    <string name="driver_age_hint">Driver\'s Age</string>
+    <string name="driver_gender_label">Driver\'s Gender:</string>
+    <string name="male_label">Male</string>
+    <string name="female_label">Female</string>
+    <string name="driver_license_label">Driver\'s License:</string>
+    <string name="seat_belt_label">Seat Belt:</string>
+    <string name="helmet_label">Helmet:</string>
+<!--Death and injury Strings-->
+    <string name="death_injury_label">DEATH AND INJURY</string>
+    <string name="enter_death_hint">Enter No. of Deaths</string>
+    <string name="enter_injury_hint">Enter No. of Injuries</string>
+    <string name="compromise_label">Compromise</string>
+    <string name="yes_label">Yes</string>
+    <string name="no_label">No</string>
+    <string name="fir_label">F.I.R:</string>
+    <string name="registered_label">Registered</string>
+    <string name="not_registered_label">Not Registered</string>
+    <string name="handed_over_label">Handed Over</string>
+    <string name="duty_officer_hint">Duty Officer</string>
+<!--Road and cause Strings-->
+    <string name="road_cause_label">Road and Cause</string>
+    <string name="description_hint">Enter Description</string>
+    <string name="fault_vehicle_hint">No. of fault Vehicles</string>
+    <string name="damage_vehicle_hint">No. of Damage Vehicles</string>
+    <string name="place_accident_hint">Enter Place of Accident</string>
+<!--Navigation Button-->
+    <string name="previous">Previous</string>
+    <string name="next">Next</string>
+<!--Logo Description-->
+    <string name="itp_logo">ITP Logo</string>
+    <string name="sergent_logo">Officer Logo</string>
+    <string name="vehicle_logo">Vehicle Logo</string>
+    <string name="road_cause_logo">Location Logo</string>
+    <string name="death_injury_logo">Medical Logo</string>
+</resources>
