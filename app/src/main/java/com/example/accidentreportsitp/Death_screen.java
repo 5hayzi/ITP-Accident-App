@@ -1,5 +1,6 @@
 package com.example.accidentreportsitp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -7,11 +8,16 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.content.Context;
+import java.util.Locale;
 
 public class Death_screen extends AppCompatActivity {
 
     private Spinner policeBoxSpinner;
     private Spinner hospitalBoxSpinner;
+    TextView back,next;
     String[] policeItems = {"AABPARA", "KOHSAR", "SECRETARIAT", "MARGALLA", "KARACHI COMPANY", "SHALIMAR", "GOLRA SHARIF", "RAMNA", "INDUSTRIAL AREA", "SABZI MANDI", "KHANA", "NOON", "SHAMAS COLONY", "TARNOL", "KORAL", "LOHI BHEER", "BHARAKAHU", "SHAHZAD TOWN", "BANI GALA", "SIHALA", "NILOR"};
     String[] hospitalItems = {"PIMS", "POLY CLINIC", "HOLY FAMILY", "AL MAROOF", "AL SHIFA", "QUAID E AZAM", "SERVICES HOSPITAL", "N.A."};
 
@@ -25,6 +31,14 @@ public class Death_screen extends AppCompatActivity {
 
         hospitalBoxSpinner = findViewById(R.id.hospitalbox);
         setUphospitalSpinner();
+        back = findViewById(R.id.btnprev);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     private void setUpPoliceSpinner() {
@@ -71,5 +85,18 @@ public class Death_screen extends AppCompatActivity {
                 // Interface callback for when nothing is selected
             }
         });
+    }
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        // Retrieve the saved language preference from SharedPreferences
+        SharedPreferences sharedPreferences = newBase.getSharedPreferences("MyPrefs", MODE_PRIVATE);
+        String language = sharedPreferences.getString("language", "en");
+
+        // Set the locale based on the selected language
+        Locale locale = new Locale(language);
+        Configuration configuration = new Configuration();
+        configuration.setLocale(locale);
+        Context context = newBase.createConfigurationContext(configuration);
+        super.attachBaseContext(context);
     }
 }

@@ -18,7 +18,8 @@
         app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/itplogo2" />
+        app:srcCompat="@drawable/itplogo2"
+        android:contentDescription="@string/itp_logo"/>
 
     <TextView
         android:id="@+id/textView"
