@@ -1,4 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="vehicle_types">Bike</string-array>
+    <string-array name="vehicle_types">
+        <item>Select Car Type</item>
+        <item>CAR </item>
+        <item>BIKE</item>
+        <item>SHAHZORE</item>
+        <item>TRUCK</item>
+        <item>DUMPER</item>
+        <item>TRAILER</item>
+        <item>SUZUKI BOLAN</item>
+        <item>SUZUKI PICKUP</item>
+        <item>DOUBLE CABIN</item>
+        <item>HIACE / WAGON</item>
+        <item>BUS</item>
+        <item>COASTER</item>
+        <item>TRACTOR</item>
+        <item>RIKSHAW</item>
+        <item>TRACTOR TROLLEY</item>
+        <item>SPECIAL VEHICLE</item>
+        <item>PEDESTRIAN </item>
+        <item>FOOTPATH </item>
+
+    </string-array>
+    
+    <string-array name="police_stations">
+
+        <item>Select Police Station </item>
+        <item>AABPARA </item>
+        <item>KOHSAR</item>
+        <item>SECRETARIAT</item>
+        <item>MARGALLA</item>
+        <item>KARACHI COMPANY</item>
+        <item>SHALIMAR</item>
+        <item>GOLRA SHARIF</item>
+        <item>RAMNA</item>
+        <item>INDUSTRIAL AREA</item>
+        <item>SABZI MANDI</item>
+        <item>KHANA</item>
+        <item>NOON</item>
+        <item>SHAMAS COLONY</item>
+        <item>KORAL</item>
+        <item>LOHI BHEER</item>
+        <item>BHARAKAHU</item>
+        <item>SHAHZAD TOWN</item>
+        <item>SIHALA </item>
+        <item>NILOR </item>
+    </string-array>
+
+    <string-array name="hospitals">
+        <item>Select Hospital</item>
+        <item>PIMS</item>
+        <item>POLY CLINIC</item>
+        <item>HOLY FAMILY</item>
+        <item>AL MAROOF</item>
+        <item>AL SHIFA</item>
+        <item>QUAID E AZAM</item>
+        <item>SERVICES HOSPITAL </item>
+        <item>N.A. </item>
+    </string-array>
+
+    <string-array name="accident_cause">
+        <item>Select Accident Cause</item>
+        <item>OVER SPEED</item>
+        <item>WRONG WAY DRIVING</item>
+        <item>CARELESS DRIVING</item>
+        <item>ROAD ENGINEERING/FAULT</item>
+        <item>CARELESS DRIVING</item>
+        <item>MECHANICAL FAULT</item>
+        <item>ONE WHEELING</item>
+        <item>RACING</item>
+        <item>RED SIGNAL</item>
+        <item>OVERTAKING</item>
+    </string-array>
+
+    <string-array name="roads">
+        <item>Select Road</item>
+        <item>MURREE ROAD</item>
+        <item>EXPRESSWAY</item>
+        <item>IJP ROAD</item>
+        <item>KASHMIR HIGHWAY</item>
+        <item>MARGALLA ROAD</item>
+        <item>7TH AVENUE </item>
+        <item>9TH AVENUE </item>
+        <item>FAISAL AVENUE</item>
+        <item>JINNAH AVENUE </item>
+        <item>CONSTITUTION AVENUE</item>
+        <item>3RD AVENUE </item>
+        <item>BARI IMAM ROAD </item>
+        <item>IBN E SINA ROAD </item>
+        <item>FAZL E HAQ ROAD </item>
+        <item>NAZIM UD DIN ROAD </item>
+        <item>FAQIR AIPEE ROAD </item>
+        <item>HILL ROAD </item>
+        <item>EMBASSY ROAD </item>
+        <item>SUHARWARDI ROAD </item>
+        <item>HILL ROAD </item>
+        <item>4TH AVENUE  </item>
+        <item>RESIDENTIAL AREA   </item>
+        <item>MARKET PLACE</item>
+        <item>SERVICE ROADS</item>
+        <item>SECTOR SERVICE ROADS</item>
+    </string-array>
 </resources>

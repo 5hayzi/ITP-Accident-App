@@ -18,8 +18,8 @@ public class Death_screen extends AppCompatActivity {
     private Spinner policeBoxSpinner;
     private Spinner hospitalBoxSpinner;
     TextView back,next;
-    String[] policeItems = {"AABPARA", "KOHSAR", "SECRETARIAT", "MARGALLA", "KARACHI COMPANY", "SHALIMAR", "GOLRA SHARIF", "RAMNA", "INDUSTRIAL AREA", "SABZI MANDI", "KHANA", "NOON", "SHAMAS COLONY", "TARNOL", "KORAL", "LOHI BHEER", "BHARAKAHU", "SHAHZAD TOWN", "BANI GALA", "SIHALA", "NILOR"};
-    String[] hospitalItems = {"PIMS", "POLY CLINIC", "HOLY FAMILY", "AL MAROOF", "AL SHIFA", "QUAID E AZAM", "SERVICES HOSPITAL", "N.A."};
+  String[] policeItems = {"Select Police Station","AABPARA", "KOHSAR", "SECRETARIAT", "MARGALLA", "KARACHI COMPANY", "SHALIMAR", "GOLRA SHARIF", "RAMNA", "INDUSTRIAL AREA", "SABZI MANDI", "KHANA", "NOON", "SHAMAS COLONY", "TARNOL", "KORAL", "LOHI BHEER", "BHARAKAHU", "SHAHZAD TOWN", "BANI GALA", "SIHALA", "NILOR"};
+    String[] hospitalItems = {"Select Hospital","PIMS", "POLY CLINIC", "HOLY FAMILY", "AL MAROOF", "AL SHIFA", "QUAID E AZAM", "SERVICES HOSPITAL", "N.A."};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +36,8 @@ public class Death_screen extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                Intent intent = new Intent(Death_screen.this,roadAndCause.class);
+                startActivity(intent);
             }
         });
     }

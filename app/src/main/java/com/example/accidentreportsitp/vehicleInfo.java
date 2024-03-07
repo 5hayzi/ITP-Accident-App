@@ -86,7 +86,8 @@ public class vehicleInfo extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                Intent intent = new Intent(vehicleInfo.this,sergeantInfo.class);
+                startActivity(intent);
             }
         });
     }

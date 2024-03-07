@@ -186,6 +186,7 @@
                 android:layout_marginEnd="30dp"
                 android:background="@drawable/rounded_bg"
                 android:ems="20"
+                android:entries="@array/hospitals"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -249,6 +250,7 @@
                 android:layout_marginEnd="30dp"
                 android:background="@drawable/rounded_bg"
                 android:ems="20"
+                android:entries="@array/police_stations"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
