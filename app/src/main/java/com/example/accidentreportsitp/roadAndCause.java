@@ -55,7 +55,8 @@ public class roadAndCause extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                Intent intent = new Intent(roadAndCause.this,vehicleInfo.class);
+                startActivity(intent);
             }
         });
     }
