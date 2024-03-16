@@ -22,7 +22,20 @@
         <item>FOOTPATH </item>
 
     </string-array>
-    
+
+    <string-array name="collide_type">
+        <item>Select Collision Type</item>
+        <item>BIKE TO BIKE</item>
+        <item>VEHICLE TO BIKE</item>
+        <item>VEHICLE TO VEHICLE</item>
+        <item>PEDESTRIAN TO BIKE</item>
+        <item>PEDESTRIAN TO VEHICLE</item>
+        <item>VEHICLE TO FOOTPATH</item>
+        <item>BIKE TO FOOTPATH</item>
+        <item>BIKE TO POL/GREENBELT</item>
+        <item>VEHICLE TO POL/GREENBELT</item>
+    </string-array>
+
     <string-array name="police_stations">
 
         <item>Select Police Station </item>
