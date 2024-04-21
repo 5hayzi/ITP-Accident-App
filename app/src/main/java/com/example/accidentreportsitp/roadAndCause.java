@@ -2,6 +2,7 @@ package com.example.accidentreportsitp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.EventLogTags;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -14,12 +15,8 @@ import java.util.Locale;
 
 public class roadAndCause extends AppCompatActivity {
 
-    private EditText roadAndCauseEditText;
-    private EditText faultNumberEditText;
-    private EditText damageVehicleEditText;
-    private EditText accidentPlaceEditText;
-    private Spinner accidentCauseBox;
-    private Spinner roadNameBox;
+    private EditText Description, faultNumber, damageVehicle, accidentPlace;
+    private Spinner accidentCause, collisionCause, roadName;
     TextView back,next;
 
     @Override
@@ -31,12 +28,13 @@ public class roadAndCause extends AppCompatActivity {
         // Make sure the layout name matches your XML file name
 
         // Initialize your UI components here
-        roadAndCauseEditText = findViewById(R.id.RoadAndCause);
-        faultNumberEditText = findViewById(R.id.faultNumber);
-        damageVehicleEditText = findViewById(R.id.damageVehicle);
-        accidentPlaceEditText = findViewById(R.id.accidentPlace);
-        accidentCauseBox = findViewById(R.id.accidentCauseBox);
-        roadNameBox = findViewById(R.id.roadNameBox);
+        Description = findViewById(R.id.RoadAndCause);
+        faultNumber = findViewById(R.id.faultNumber);
+        damageVehicle = findViewById(R.id.damageVehicle);
+        accidentCause = findViewById(R.id.accidentCauseBox);
+        collisionCause = findViewById(R.id.collisionCauseBox);
+        accidentPlace = findViewById(R.id.accidentPlace);
+        roadName = findViewById(R.id.roadNameBox);
 
         // Here you can set listeners or any initial setup for your views.
         // For example, if you have a button to submit the form, initialize it here and set its onClickListener.

@@ -12,12 +12,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TextView;
+import android.widget.EditText;
 import android.widget.TimePicker;
 
 import java.util.Locale;
 
 
 public class sergeantInfo extends AppCompatActivity {
+
+    EditText divisionEditText, sergeantNameEditText, sergeantRankEditText, sergeantIdEditText;
 
     TextView showdate,showtime,back,next;
     private Button languageButton;
@@ -27,6 +30,10 @@ public class sergeantInfo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sergeant_info);
 
+        divisionEditText = findViewById(R.id.division);
+        sergeantNameEditText = findViewById(R.id.sergeantName);
+        sergeantRankEditText = findViewById(R.id.sergeantRank);
+        sergeantIdEditText = findViewById(R.id.sergeantId);
         showdate = findViewById(R.id.date);
         showtime = findViewById(R.id.time);
         back = findViewById(R.id.btnprev);
@@ -53,7 +60,6 @@ public class sergeantInfo extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
         languageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -86,6 +92,15 @@ public class sergeantInfo extends AppCompatActivity {
         configuration.setLocale(locale);
         Context context = newBase.createConfigurationContext(configuration);
         super.attachBaseContext(context);
+    }
+
+    sergeantInfo(){
+        String division = divisionEditText.getText().toString();
+        String sergeantName = sergeantNameEditText.getText().toString();
+        String sergeantRank = sergeantRankEditText.getText().toString();
+        String sergeantId = sergeantIdEditText.getText().toString();
+        String date = showdate.getText().toString();
+        String time = showtime.getText().toString();
     }
 
     public void openDateDialog(){
