@@ -94,14 +94,14 @@ public class sergeantInfo extends AppCompatActivity {
         super.attachBaseContext(context);
     }
 
-    sergeantInfo(){
-        String division = divisionEditText.getText().toString();
-        String sergeantName = sergeantNameEditText.getText().toString();
-        String sergeantRank = sergeantRankEditText.getText().toString();
-        String sergeantId = sergeantIdEditText.getText().toString();
-        String date = showdate.getText().toString();
-        String time = showtime.getText().toString();
-    }
+//    sergeantInfo(){
+//        String division = divisionEditText.getText().toString();
+//        String sergeantName = sergeantNameEditText.getText().toString();
+//        String sergeantRank = sergeantRankEditText.getText().toString();
+//        String sergeantId = sergeantIdEditText.getText().toString();
+//        String date = showdate.getText().toString();
+//        String time = showtime.getText().toString();
+//    }
 
     public void openDateDialog(){
         DatePickerDialog dialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
