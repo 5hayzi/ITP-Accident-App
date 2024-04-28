@@ -25,9 +25,7 @@ public class roadAndCause extends AppCompatActivity {
         setContentView(R.layout.road_and_cause);
         back = findViewById(R.id.btnprev);
         next = findViewById(R.id.btnnxt);
-        // Make sure the layout name matches your XML file name
 
-        // Initialize your UI components here
         Description = findViewById(R.id.RoadAndCause);
         faultNumber = findViewById(R.id.faultNumber);
         damageVehicle = findViewById(R.id.damageVehicle);
@@ -40,13 +38,21 @@ public class roadAndCause extends AppCompatActivity {
         Description.setText(road_and_cause_controller.getDescription());
         faultNumber.setText(road_and_cause_controller.getFaultNumber());
         damageVehicle.setText(road_and_cause_controller.getDamageVehicle());
+        accidentPlace.setText(road_and_cause_controller.getAccidentPlace());
+        accidentCause.setSelection(getIndex(accidentCause, road_and_cause_controller.getAccidentCause()));
+        collisionCause.setSelection(getIndex(collisionCause, road_and_cause_controller.getCollisionCause()));
+        roadName.setSelection(getIndex(roadName, road_and_cause_controller.getRoadName()));
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 road_and_cause_controller.setData(
                         Description.getText().toString(),
                         faultNumber.getText().toString(),
-                        damageVehicle.getText().toString()
+                        damageVehicle.getText().toString(),
+                        accidentCause.getSelectedItem().toString(),
+                        collisionCause.getSelectedItem().toString(),
+                        accidentPlace.getText().toString(),
+                        roadName.getSelectedItem().toString()
                 );
                 Intent intent = new Intent(roadAndCause.this,Death_screen.class);
                 startActivity(intent);
@@ -62,8 +68,14 @@ public class roadAndCause extends AppCompatActivity {
 
     }
 
-    // You might want to create additional methods to setup your views, such as setting up a spinner adapter.
-    // private void setupSpinner() { ... }
+    private int getIndex(Spinner spinner, String item) {
+        for (int i = 0; i < spinner.getCount(); i++) {
+            if (spinner.getItemAtPosition(i).toString().equalsIgnoreCase(item)) {
+                return i;
+            }
+        }
+        return 0;
+    }
     protected void attachBaseContext(Context newBase) {
         // Retrieve the saved language preference from SharedPreferences
         SharedPreferences sharedPreferences = newBase.getSharedPreferences("MyPrefs", MODE_PRIVATE);

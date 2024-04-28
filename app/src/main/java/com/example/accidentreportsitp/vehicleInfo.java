@@ -23,9 +23,6 @@ import androidx.annotation.Nullable;
 import android.provider.MediaStore;
 import android.widget.Toast;
 
-
-
-
 public class vehicleInfo extends AppCompatActivity {
 
     private Button btnAddCar;

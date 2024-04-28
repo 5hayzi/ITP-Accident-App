@@ -29,6 +29,8 @@ public class sergeantInfo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sergeant_info);
+        back = findViewById(R.id.btnprev);
+        next = findViewById(R.id.btnnxt);
 
         divisionEditText = findViewById(R.id.division);
         sergeantNameEditText = findViewById(R.id.sergeantName);
@@ -36,8 +38,9 @@ public class sergeantInfo extends AppCompatActivity {
         sergeantIdEditText = findViewById(R.id.sergeantId);
         showdate = findViewById(R.id.date);
         showtime = findViewById(R.id.time);
-        back = findViewById(R.id.btnprev);
-        next = findViewById(R.id.btnnxt);
+
+        restoreData();
+
         languageButton = findViewById(R.id.languageButton);
 
         showdate.setOnClickListener(new View.OnClickListener() {
@@ -56,6 +59,7 @@ public class sergeantInfo extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                saveData();
                 Intent intent = new Intent(sergeantInfo.this,vehicleInfo.class);
                 startActivity(intent);
             }
@@ -80,6 +84,24 @@ public class sergeantInfo extends AppCompatActivity {
 
 
     }
+    private void restoreData() {
+        divisionEditText.setText(sergent_info_controller.getDivision());
+        sergeantNameEditText.setText(sergent_info_controller.getSergeantName());
+        sergeantRankEditText.setText(sergent_info_controller.getSergeantRank());
+        sergeantIdEditText.setText(sergent_info_controller.getSergeantId());
+        showdate.setText(sergent_info_controller.getDate());
+        showtime.setText(sergent_info_controller.getTime());
+    }
+    private void saveData() {
+        sergent_info_controller.setData(
+                divisionEditText.getText().toString(),
+                sergeantNameEditText.getText().toString(),
+                sergeantRankEditText.getText().toString(),
+                sergeantIdEditText.getText().toString(),
+                showdate.getText().toString(),
+                showtime.getText().toString()
+        );
+    }
     @Override
     protected void attachBaseContext(Context newBase) {
         // Retrieve the saved language preference from SharedPreferences
@@ -94,14 +116,6 @@ public class sergeantInfo extends AppCompatActivity {
         super.attachBaseContext(context);
     }
 
-//    sergeantInfo(){
-//        String division = divisionEditText.getText().toString();
-//        String sergeantName = sergeantNameEditText.getText().toString();
-//        String sergeantRank = sergeantRankEditText.getText().toString();
-//        String sergeantId = sergeantIdEditText.getText().toString();
-//        String date = showdate.getText().toString();
-//        String time = showtime.getText().toString();
-//    }
 
     public void openDateDialog(){
         DatePickerDialog dialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
@@ -124,7 +138,7 @@ public class sergeantInfo extends AppCompatActivity {
                         // Update the TextView with the selected time
                         showtime.setText(String.format("%02d:%02d", hourOfDay, minute));
                     }
-                }, hour, minute, true);
+                }, hour, minute, false);
         // Show the TimePickerDialog
         dialog.show();
     }
