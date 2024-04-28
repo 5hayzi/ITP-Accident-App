@@ -36,16 +36,18 @@ public class roadAndCause extends AppCompatActivity {
         accidentPlace = findViewById(R.id.accidentPlace);
         roadName = findViewById(R.id.roadNameBox);
 
-        // Here you can set listeners or any initial setup for your views.
-        // For example, if you have a button to submit the form, initialize it here and set its onClickListener.
-
-        // Example setup for a Spinner (dropdown menu)
-        // setupSpinner();
-
-        // Other initialization code can go here
+        // Restore data from Controller class
+        Description.setText(road_and_cause_controller.getDescription());
+        faultNumber.setText(road_and_cause_controller.getFaultNumber());
+        damageVehicle.setText(road_and_cause_controller.getDamageVehicle());
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                road_and_cause_controller.setData(
+                        Description.getText().toString(),
+                        faultNumber.getText().toString(),
+                        damageVehicle.getText().toString()
+                );
                 Intent intent = new Intent(roadAndCause.this,Death_screen.class);
                 startActivity(intent);
             }
@@ -57,11 +59,11 @@ public class roadAndCause extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
 
     // You might want to create additional methods to setup your views, such as setting up a spinner adapter.
     // private void setupSpinner() { ... }
-
     protected void attachBaseContext(Context newBase) {
         // Retrieve the saved language preference from SharedPreferences
         SharedPreferences sharedPreferences = newBase.getSharedPreferences("MyPrefs", MODE_PRIVATE);
@@ -72,6 +74,7 @@ public class roadAndCause extends AppCompatActivity {
         Configuration configuration = new Configuration();
         configuration.setLocale(locale);
         Context context = newBase.createConfigurationContext(configuration);
-        super.attachBaseContext(context);}
+        super.attachBaseContext(context);
+    }
 }
 
