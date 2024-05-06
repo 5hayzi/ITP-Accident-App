@@ -26,7 +26,9 @@
 <!--Death and injury Strings-->
     <string name="death_injury_label">DEATH AND INJURY</string>
     <string name="enter_death_hint">Enter No. of Deaths</string>
+    <string name="description_death">Description of Deaths</string>
     <string name="enter_injury_hint">Enter No. of Injuries</string>
+    <string name="description_Injury">Description of Injured</string>
     <string name="compromise_label">Compromise</string>
     <string name="yes_label">Yes</string>
     <string name="no_label">No</string>
@@ -35,6 +37,7 @@
     <string name="not_registered_label">Not Registered</string>
     <string name="handed_over_label">Handed Over</string>
     <string name="duty_officer_hint">Duty Officer</string>
+    <string name="Submit">Submit</string>
 <!--Road and cause Strings-->
     <string name="road_cause_label">Road and Cause</string>
     <string name="description_hint">Enter Description</string>

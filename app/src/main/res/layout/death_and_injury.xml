@@ -91,23 +91,6 @@
 
             <!--No. of deaths-->
             <EditText
-                android:id="@+id/Description"
-                android:layout_width="match_parent"
-                android:layout_height="50sp"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="12sp"
-                android:layout_marginEnd="30dp"
-                android:background="@drawable/rounded_bg"
-                android:ems="20"
-                android:hint="@string/description_hint"
-                android:inputType="textLongMessage"
-                android:padding="10dp"
-                android:textColor="@color/darkblue"
-                android:textSize="18sp"
-                android:textColorHint="@color/grey"
-                android:textStyle="bold" />
-
-            <EditText
                 android:id="@+id/DeathNumber"
                 android:layout_width="match_parent"
                 android:layout_height="50sp"
@@ -122,6 +105,23 @@
                 android:textColor="@color/darkblue"
                 android:textColorHint="@color/grey"
                 android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/death_Description"
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="12sp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/rounded_bg"
+                android:ems="20"
+                android:hint="@string/description_death"
+                android:inputType="textLongMessage"
+                android:padding="10dp"
+                android:textColor="@color/darkblue"
+                android:textSize="18sp"
+                android:textColorHint="@color/grey"
                 android:textStyle="bold" />
 
             <!--No. of injuries-->
@@ -140,6 +140,23 @@
                 android:textColor="@color/darkblue"
                 android:textColorHint="@color/grey"
                 android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/injury_Description"
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="12sp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/rounded_bg"
+                android:ems="20"
+                android:hint="@string/description_Injury"
+                android:inputType="textLongMessage"
+                android:padding="10dp"
+                android:textColor="@color/darkblue"
+                android:textSize="18sp"
+                android:textColorHint="@color/grey"
                 android:textStyle="bold" />
 
             <RadioGroup
@@ -298,13 +315,13 @@
 
 
                 <TextView
-                    android:id="@+id/btnnxt"
+                    android:id="@+id/Submit"
                     android:layout_width="100dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="30dp"
                     android:background="@drawable/next_button_bg"
                     android:gravity="center"
-                    android:text="@string/next"
+                    android:text="@string/Submit"
                     android:textAlignment="center"
                     android:textColor="#0E8F0A"
                     android:textSize="18sp">
