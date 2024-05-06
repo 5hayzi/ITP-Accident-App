@@ -23,6 +23,7 @@
     <string name="helmet_label">ہیلمٹ</string>
     <string name="death_injury_label">موت اور زخم</string>
     <string name="enter_death_hint">موتوں کی تعداد درج کریں</string>
+    <string name="description_death">اموات کی تفصیل</string>
     <string name="enter_injury_hint">زخموں کی تعداد درج کریں</string>
     <string name="compromise_label">مفاہمت:</string>
     <string name="yes_label">ہاں</string>
@@ -44,4 +45,6 @@
     <string name="vehicle_logo">گاڑی لوگو</string>
     <string name="road_cause_logo">مقام لوگو</string>
     <string name="death_injury_logo">طبی لوگو</string>
+    <string name="description_Injury">زخمی کی تفصیل</string>
+    <string name="Submit">جمع کریں</string>
 </resources>

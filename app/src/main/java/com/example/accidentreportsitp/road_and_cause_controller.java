@@ -13,24 +13,31 @@ public class road_and_cause_controller {
     }
 
     public static String getDescription() {
+
         return description;
     }
     public static String getFaultNumber() {
+
         return faultNumber;
     }
     public static String getDamageVehicle() {
+
         return damageVehicle;
     }
     public static String getAccidentCause() {
+
         return accidentCause;
     }
     public static String getCollisionCause() {
+
         return collisionCause;
     }
     public static String getAccidentPlace() {
+
         return accidentPlace;
     }
     public static String getRoadName() {
+
         return roadName;
     }
 }

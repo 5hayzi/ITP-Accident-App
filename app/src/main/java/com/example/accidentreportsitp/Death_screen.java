@@ -18,31 +18,40 @@ import java.util.Locale;
 
 public class Death_screen extends AppCompatActivity {
 
-    private EditText Description, deathNo, injuryNo, dutyOfficer;
+    private EditText deathDescp, injuryDescp, deathNo, injuryNo, dutyOfficer;
     private Spinner policeBoxSpinner, hospitalBoxSpinner;
 
     private String FIROption, CompromiseOption;
+    private RadioGroup FIRBox, compromiseBox;
+    private RadioButton registeredButton, notRegisteredButton, handedOverButton, YesBtn, NoBtn;
 
-    TextView back,next;
-    String[] policeItems = {"Select Police Station","AABPARA", "KOHSAR", "SECRETARIAT", "MARGALLA", "KARACHI COMPANY", "SHALIMAR", "GOLRA SHARIF", "RAMNA", "INDUSTRIAL AREA", "SABZI MANDI", "KHANA", "NOON", "SHAMAS COLONY", "TARNOL", "KORAL", "LOHI BHEER", "BHARAKAHU", "SHAHZAD TOWN", "BANI GALA", "SIHALA", "NILOR"};
-    String[] hospitalItems = {"Select Hospital","PIMS", "POLY CLINIC", "HOLY FAMILY", "AL MAROOF", "AL SHIFA", "QUAID E AZAM", "SERVICES HOSPITAL", "N.A."};
-
+    TextView back,submit;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.death_and_injury);
 
-        Description = findViewById(R.id.Description);
         deathNo = findViewById(R.id.DeathNumber);
+        deathDescp = findViewById(R.id.death_Description);
         injuryNo = findViewById(R.id.InjuryNumber);
+        injuryDescp = findViewById(R.id.injury_Description);
         dutyOfficer = findViewById(R.id.DutyOfficer);
         policeBoxSpinner = findViewById(R.id.PoliceBox);
-        setUpPoliceSpinner();
 
         hospitalBoxSpinner = findViewById(R.id.hospitalbox);
-        setUphospitalSpinner();
         back = findViewById(R.id.btnprev);
+        submit = findViewById(R.id.Submit);
 
+        FIRBox = findViewById(R.id.FIRBox);
+        registeredButton = findViewById(R.id.RegisteredBox);
+        notRegisteredButton = findViewById(R.id.notRegisteredBox);
+        handedOverButton = findViewById(R.id.handedBox);
+
+        compromiseBox = findViewById(R.id.CompromiseBox);
+        YesBtn = findViewById(R.id.YesBox);
+        NoBtn = findViewById(R.id.NoBox);
+
+        RetrieveData();
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,82 +60,82 @@ public class Death_screen extends AppCompatActivity {
             }
         });
 
-        RadioGroup FIRBox = findViewById(R.id.FIRBox);
-        RadioButton registeredButton = findViewById(R.id.RegisteredBox);
-        RadioButton notRegisteredButton = findViewById(R.id.notRegisteredBox);
-        RadioButton handedOverButton = findViewById(R.id.handedBox);
         FIRBox.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.RegisteredBox) {
+                if (checkedId == R.id.RegisteredBox ) {
                     FIROption = registeredButton.getText().toString();
-                } else if (checkedId == R.id.notRegisteredBox) {
+                } else if (checkedId == R.id.notRegisteredBox ) {
                     FIROption = notRegisteredButton.getText().toString();
-                } else if (checkedId == R.id.handedBox) {
+                } else if (checkedId == R.id.handedBox ) {
                     FIROption = handedOverButton.getText().toString();
                 }
             }
         });
 
-        RadioGroup compromiseBox = findViewById(R.id.CompromiseBox);
-        RadioButton YesBtn = findViewById(R.id.YesBox);
-        RadioButton NoBtn = findViewById(R.id.NoBox);
         compromiseBox.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.YesBox) {
+                if (checkedId == R.id.YesBox ) {
                     CompromiseOption = YesBtn.getText().toString();
-                } else if (checkedId == R.id.NoBox) {
+                } else if (checkedId == R.id.NoBox ) {
                     CompromiseOption = NoBtn.getText().toString();
                 }
             }
         });
-    }
-
-    private void setUpPoliceSpinner() {
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, policeItems);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        policeBoxSpinner.setAdapter(adapter);
-
-        // Add hint to police spinner
-        policeBoxSpinner.setPrompt("Select a Police Station");
-
-        // Handle selection and reflect it back in the spinner box
-        policeBoxSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        submit.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                String selectedItem = policeItems[position];
-                ((TextView) parentView.getChildAt(0)).setText(selectedItem);
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parentView) {
-                // Interface callback for when nothing is selected
+            public void onClick(View v) {
+                death_screen_controller.set_data(
+                        deathDescp.getText().toString(),
+                        injuryDescp.getText().toString(),
+                        dutyOfficer.getText().toString(),
+                        policeBoxSpinner.getSelectedItem().toString(),
+                        hospitalBoxSpinner.getSelectedItem().toString(),
+                        deathNo.getText().toString(),
+                        injuryNo.getText().toString(),
+                        FIROption,
+                        CompromiseOption
+                        );
             }
         });
+
     }
+    public void RetrieveData(){
+                deathDescp.setText(death_screen_controller.getDeath_descp());
+                injuryDescp.setText(death_screen_controller.getInjury_descp());
+                dutyOfficer.setText(death_screen_controller.getOfficer_duty());
+                policeBoxSpinner.setSelection(getIndex(policeBoxSpinner, death_screen_controller.getPolice()));
+                hospitalBoxSpinner.setSelection(getIndex(hospitalBoxSpinner, death_screen_controller.getHospital()));
+                deathNo.setText(death_screen_controller.getDeath_No());
+                injuryNo.setText(death_screen_controller.getInjury_No());
+                String fir = death_screen_controller.getFIR();
+                if(fir != null){
+                    if ( fir.equals("Registered")){
+                        registeredButton.setChecked(true);
+                    } else if (fir.equals("Not Registered")) {
+                        notRegisteredButton.setChecked(true);
+                    } else if (fir.equals("Handed Over")) {
+                        handedOverButton.setChecked(true);
+                    }
+                }
 
-    private void setUphospitalSpinner() {
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, hospitalItems);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        hospitalBoxSpinner.setAdapter(adapter);
+                String comp = death_screen_controller.getCompromise();
+                if(comp != null){
+                if( comp.equals("Yes")){
+                    YesBtn.setChecked(true);
+                } else if (comp.equals("No")) {
+                    NoBtn.setChecked(true);
+                }}
 
-        // Add hint to hospital spinner
-        hospitalBoxSpinner.setPrompt("Select a Hospital");
-
-        // Handle selection and reflect it back in the spinner box
-        hospitalBoxSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                String selectedItem = hospitalItems[position];
-                ((TextView) parentView.getChildAt(0)).setText(selectedItem);
+    }
+    private int getIndex(Spinner spinner, String item) {
+        for (int i = 0; i < spinner.getCount(); i++) {
+            if (spinner.getItemAtPosition(i).toString().equalsIgnoreCase(item)) {
+                return i;
             }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parentView) {
-                // Interface callback for when nothing is selected
-            }
-        });
+        }
+        return 0;
     }
     @Override
     protected void attachBaseContext(Context newBase) {

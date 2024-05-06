@@ -17,20 +17,25 @@ import android.widget.TextView;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.Context;
+
+import java.util.List;
 import java.util.Locale;
 import android.net.Uri;
 import androidx.annotation.Nullable;
 import android.provider.MediaStore;
 import android.widget.Toast;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class vehicleInfo extends AppCompatActivity {
 
     private Button btnAddCar;
-    TextView back,next;
+    TextView back, next;
     private LinearLayout layoutCarFields;
-    private Button camerabtn;
     private static final int REQUEST_IMAGE_PICK = 1;
-
+    private Uri currentImageUri;
+    private Map<View, Uri> carViewToImageUriMap = new HashMap<>();
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -42,71 +47,119 @@ public class vehicleInfo extends AppCompatActivity {
         layoutCarFields = findViewById(R.id.carsLayout);
         back = findViewById(R.id.btnprev);
         next = findViewById(R.id.btnnxt);
+        btnAddCar.setOnClickListener(v -> addNewCarEntry());
 
-        btnAddCar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Inflate the layout for a single car entry
-                View carEntryView = getLayoutInflater().inflate(R.layout.car_entry, null);
+        restoreData();
 
-                // Find the EditText fields within the inflated layout
-                EditText carRegNo = carEntryView.findViewById(R.id.carRegno);
-                Spinner carType = carEntryView.findViewById(R.id.carTypeSpinner);
-                EditText driverName = carEntryView.findViewById(R.id.driverName);
-                EditText driverAge = carEntryView.findViewById(R.id.driverAge);
-                RadioGroup driverGenderRadioGroup = carEntryView.findViewById(R.id.driverGenderRadioGroup);
-                RadioGroup driverLicenseRadioGroup = carEntryView.findViewById(R.id.driverLicenseRadioGroup);
-                RadioGroup seatBeltRadioGroup = carEntryView.findViewById(R.id.seatBeltRadioGroup);
-                RadioGroup helmetRadioGroup = carEntryView.findViewById(R.id.helmetRadioGroup);
-                Button camerabtn = carEntryView.findViewById(R.id.cameraButton);
-                // Add the inflated layout to the parent layout
-                layoutCarFields.addView(carEntryView);
-
-                camerabtn.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        // Launch camera or gallery intent
-                        openCameraOrGallery();
-                    }
-                });
-            }
+        next.setOnClickListener(v -> {
+            saveAllCars();
+            startActivity(new Intent(vehicleInfo.this, roadAndCause.class));
         });
 
-
-        next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(vehicleInfo.this,roadAndCause.class);
-                startActivity(intent);
-            }
-        });
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(vehicleInfo.this,sergeantInfo.class);
-                startActivity(intent);
-            }
-        });
+        back.setOnClickListener(v -> startActivity(new Intent(vehicleInfo.this, sergeantInfo.class)));
     }
+
+    private void addNewCarEntry() {
+        View carEntryView = getLayoutInflater().inflate(R.layout.car_entry, null);
+        Button cameraButton = carEntryView.findViewById(R.id.cameraButton);
+        cameraButton.setOnClickListener(v -> {
+            openCameraOrGallery();
+            currentImageUri = null; // Reset current URI
+            carViewToImageUriMap.put(carEntryView, null); // Store with null initially
+        });
+        layoutCarFields.addView(carEntryView);
+    }
+
+    private void saveAllCars() {
+        for (int i = 0; i < layoutCarFields.getChildCount(); i++) {
+            View carEntryView = layoutCarFields.getChildAt(i);
+            int count = i;
+            car_info_controller.setCount(count);
+            EditText carRegNo = carEntryView.findViewById(R.id.carRegno);
+            Spinner carType = carEntryView.findViewById(R.id.carTypeSpinner);
+            EditText driverName = carEntryView.findViewById(R.id.driverName);
+            EditText driverAge = carEntryView.findViewById(R.id.driverAge);
+            RadioGroup driverGender = carEntryView.findViewById(R.id.driverGenderRadioGroup);
+            RadioGroup driverLicense = carEntryView.findViewById(R.id.driverLicenseRadioGroup);
+            RadioGroup seatBelt = carEntryView.findViewById(R.id.seatBeltRadioGroup);
+            RadioGroup helmet = carEntryView.findViewById(R.id.helmetRadioGroup);
+
+            String registrationNumber = carRegNo.getText().toString();
+            String type = carType.getSelectedItem().toString();
+            String name = driverName.getText().toString();
+            String age = driverAge.getText().toString();
+
+            Uri imageUri = carViewToImageUriMap.get(carEntryView);
+
+            car_info_controller carInfo = new car_info_controller(registrationNumber, type, name, age, imageUri);
+            vehicle_info_controller.addCar(carInfo);
+        }
+    }
+    private void restoreData() {
+        List<car_info_controller> cars = vehicle_info_controller.getCars();
+        int totalCars = cars.size();
+        int totalLayouts = layoutCarFields.getChildCount();
+
+        // Add new car entries if needed to match the total number of cars
+        for (int i = totalLayouts; i < totalCars; i++) {
+            addNewCarEntry();
+        }
+
+        // Restore data for each car entry
+        for (int i = 0; i < totalCars; i++) {
+            View carEntryView = layoutCarFields.getChildAt(i);
+            if (carEntryView == null) {
+                carEntryView = getLayoutInflater().inflate(R.layout.car_entry, null);
+                layoutCarFields.addView(carEntryView);
+            }
+            car_info_controller carInfo = cars.get(i);
+            EditText carRegNo = carEntryView.findViewById(R.id.carRegno);
+            Spinner carType = carEntryView.findViewById(R.id.carTypeSpinner);
+            EditText driverName = carEntryView.findViewById(R.id.driverName);
+            EditText driverAge = carEntryView.findViewById(R.id.driverAge);
+            RadioGroup driverGender = carEntryView.findViewById(R.id.driverGenderRadioGroup);
+            RadioGroup driverLicense = carEntryView.findViewById(R.id.driverLicenseRadioGroup);
+            RadioGroup seatBelt = carEntryView.findViewById(R.id.seatBeltRadioGroup);
+            RadioGroup helmet = carEntryView.findViewById(R.id.helmetRadioGroup);
+
+            carRegNo.setText(carInfo.getRegistrationNumber());
+            carType.setSelection(getIndex(carType, carInfo.getCarType()));
+            driverName.setText(carInfo.getDriverName());
+            driverAge.setText(carInfo.getDriverAge());
+            // Set other fields similarly using getters from car_info_controller
+        }
+    }
+
+
     private void openCameraOrGallery() {
         Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         startActivityForResult(intent, REQUEST_IMAGE_PICK);
     }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        switch (requestCode) {
-            case REQUEST_IMAGE_PICK:
-                if (resultCode == RESULT_OK && data != null) {
-                    // Handle the selected image here
-                    Uri selectedImageUri = data.getData();
-                    // Do something with the selected image URI, such as displaying it in an ImageView or saving it to storage
-                } else {
-                    // Handle case where image selection failed
-                    Toast.makeText(this, "Image selection failed", Toast.LENGTH_SHORT).show();
-                }
-                break;
+        if (requestCode == REQUEST_IMAGE_PICK && resultCode == RESULT_OK && data != null) {
+            Uri selectedImageUri = data.getData();
+            if (currentImageUri == null) {
+                // This is the first image being selected
+                currentImageUri = selectedImageUri;
+            }
+            // Update the last added entry with the URI
+            View lastAddedView = layoutCarFields.getChildAt(layoutCarFields.getChildCount() - 1);
+            carViewToImageUriMap.put(lastAddedView, selectedImageUri);
+        } else {
+            Toast.makeText(this, "Image selection failed", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    private int getIndex(Spinner spinner, String item) {
+        for (int i = 0; i < spinner.getCount(); i++) {
+            if (spinner.getItemAtPosition(i).toString().equalsIgnoreCase(item)) {
+                return i;
+            }
+        }
+        return 0;
     }
 
     @Override
