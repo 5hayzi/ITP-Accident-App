@@ -18,6 +18,7 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.Context;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import android.net.Uri;
@@ -71,10 +72,9 @@ public class vehicleInfo extends AppCompatActivity {
     }
 
     private void saveAllCars() {
+        List<car_info_controller> cars = new ArrayList<>();
         for (int i = 0; i < layoutCarFields.getChildCount(); i++) {
             View carEntryView = layoutCarFields.getChildAt(i);
-            int count = i;
-            car_info_controller.setCount(count);
             EditText carRegNo = carEntryView.findViewById(R.id.carRegno);
             Spinner carType = carEntryView.findViewById(R.id.carTypeSpinner);
             EditText driverName = carEntryView.findViewById(R.id.driverName);
@@ -91,45 +91,38 @@ public class vehicleInfo extends AppCompatActivity {
 
             Uri imageUri = carViewToImageUriMap.get(carEntryView);
 
-            car_info_controller carInfo = new car_info_controller(registrationNumber, type, name, age, imageUri);
-            vehicle_info_controller.addCar(carInfo);
+            car_info_controller carInfo = new car_info_controller(registrationNumber, type, name, age, null);  // Assume imageUri handled
+            if (!cars.contains(carInfo)) {
+                cars.add(carInfo);
+            }
         }
+
+        vehicle_info_controller.addVehicle(cars); // Save the list of cars as a vehicle
     }
     private void restoreData() {
-        List<car_info_controller> cars = vehicle_info_controller.getCars();
-        int totalCars = cars.size();
-        int totalLayouts = layoutCarFields.getChildCount();
-
-        // Add new car entries if needed to match the total number of cars
-        for (int i = totalLayouts; i < totalCars; i++) {
-            addNewCarEntry();
-        }
-
-        // Restore data for each car entry
-        for (int i = 0; i < totalCars; i++) {
-            View carEntryView = layoutCarFields.getChildAt(i);
-            if (carEntryView == null) {
-                carEntryView = getLayoutInflater().inflate(R.layout.car_entry, null);
+        layoutCarFields.removeAllViews();
+        List<List<car_info_controller>> allVehicles = vehicle_info_controller.getAllVehicles();
+        for (List<car_info_controller> vehicleCars : allVehicles) {
+            for (car_info_controller carInfo : vehicleCars) {
+                View carEntryView = getLayoutInflater().inflate(R.layout.car_entry, null);
                 layoutCarFields.addView(carEntryView);
-            }
-            car_info_controller carInfo = cars.get(i);
-            EditText carRegNo = carEntryView.findViewById(R.id.carRegno);
-            Spinner carType = carEntryView.findViewById(R.id.carTypeSpinner);
-            EditText driverName = carEntryView.findViewById(R.id.driverName);
-            EditText driverAge = carEntryView.findViewById(R.id.driverAge);
-            RadioGroup driverGender = carEntryView.findViewById(R.id.driverGenderRadioGroup);
-            RadioGroup driverLicense = carEntryView.findViewById(R.id.driverLicenseRadioGroup);
-            RadioGroup seatBelt = carEntryView.findViewById(R.id.seatBeltRadioGroup);
-            RadioGroup helmet = carEntryView.findViewById(R.id.helmetRadioGroup);
 
-            carRegNo.setText(carInfo.getRegistrationNumber());
-            carType.setSelection(getIndex(carType, carInfo.getCarType()));
-            driverName.setText(carInfo.getDriverName());
-            driverAge.setText(carInfo.getDriverAge());
-            // Set other fields similarly using getters from car_info_controller
+                EditText carRegNo = carEntryView.findViewById(R.id.carRegno);
+                Spinner carType = carEntryView.findViewById(R.id.carTypeSpinner);
+                EditText driverName = carEntryView.findViewById(R.id.driverName);
+                EditText driverAge = carEntryView.findViewById(R.id.driverAge);
+                RadioGroup driverGender = carEntryView.findViewById(R.id.driverGenderRadioGroup);
+                RadioGroup driverLicense = carEntryView.findViewById(R.id.driverLicenseRadioGroup);
+                RadioGroup seatBelt = carEntryView.findViewById(R.id.seatBeltRadioGroup);
+                RadioGroup helmet = carEntryView.findViewById(R.id.helmetRadioGroup);
+
+                carRegNo.setText(carInfo.getRegistrationNumber());
+                carType.setSelection(getIndex(carType, carInfo.getCarType()));
+                driverName.setText(carInfo.getDriverName());
+                driverAge.setText(carInfo.getDriverAge());
+            }
         }
     }
-
 
     private void openCameraOrGallery() {
         Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
